@@ -27,7 +27,7 @@ $(document).ready(function(){
 		}
 	});
 	
-	$('#propertycategory_new_modal').on('show.bs.modal', function() {
+	$('#property_category_new_modal').on('show.bs.modal', function() {
 		$("#savepropertycategory").attr("disabled",false);
 		$('#propertycategory_new_form').formValidation('resetForm', true);
 	});

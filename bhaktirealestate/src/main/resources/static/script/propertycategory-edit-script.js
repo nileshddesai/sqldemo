@@ -27,7 +27,7 @@ $(document).ready(function(){
 		}
 	});
 	
-	$('#propertycategory_edit_modal').on('show.bs.modal', function() {
+	$('#property_category_edit_modal').on('show.bs.modal', function() {
 		$("#updatepropertycategory").attr("disabled",false);
 		$('#propertycategory_edit_form').formValidation('resetForm', true);
 	});
@@ -47,5 +47,5 @@ function editPropertyCategory(row, id) {
 	$('#updatePropertyCategoryName').val(name);
 	$('#propertyCategoryId').val(id);
 
-	$('#propertycategory_edit_modal').modal('show');
+	$('#property_category_edit_modal').modal('show');
 }

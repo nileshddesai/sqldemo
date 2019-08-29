@@ -1,5 +1,6 @@
 	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
@@ -458,6 +459,7 @@
 												<!-- <a href="tel:9714866160">Call Me</a> -->
 												<div class="tab-pane active" id="kt_widget6_tab1_content" aria-expanded="true">
 													<div class="kt-widget4">
+														<c:forEach items="${propertyCategories}" var="propertyCategory" varS
 														<div class="kt-widget4__item">
 															<div class="kt-widget4__info">
 																<a href="#" class="kt-widget4__username font-size-1_2rem">
@@ -534,16 +536,16 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<form>
+						<form id="propertycategory_new_form">
 							<div class="form-group">
 								<label for="recipient-name" class="form-control-label">Property Category:</label>
-								<input type="text" class="form-control" id="recipient-name">
+								<input type="text" class="form-control" id="propertyCategoryName" name="propertyCategoryName">
 							</div>
 						</form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save</button>
+						<button type="submit" class="btn btn-primary" id="savepropertycategory">Save</button>
 					</div>
 				</div>
 			</div>
@@ -557,18 +559,19 @@
 						<h5 class="modal-title" id="exampleModalLabel">Edit Property Category</h5>
 						<button type="button" class="btn btn-danger btn-sm btn-icon" id="delete_property_category"><i class="fa fa-trash"></i></button>
 					</div>
-					<div class="modal-body">
-						<form>
+					<form id="propertycategory_edit_form">
+						<input type="hidden" name="propertyCategoryId" id="propertyCategoryId"/>
+						<div class="modal-body">
 							<div class="form-group">
 								<label for="recipient-name" class="form-control-label">Property Category:</label>
-								<input type="text" class="form-control" id="recipient-name">
+								<input type="text" class="form-control" id="updatePropertyCategoryName" name="propertyCategoryName">
 							</div>
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save</button>
-					</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary" id="editpropertycategory">Save</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -642,11 +645,7 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then(function(result) {
                 if (result.value) {
-                    swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                    )
+                    window.location.href = "/propertycategory/" + $("#propertyCategoryId").val() + "/delete"
                 }
             });
         });

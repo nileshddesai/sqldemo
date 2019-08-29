@@ -22,7 +22,7 @@ public class PropertyCategoryController {
 	@GetMapping("")
 	public ModelAndView propertyCategory() {
 		ModelAndView view = new ModelAndView("propertycategory/propertycategory");
-		view.addObject("propertyCategory", propertyCategoryService.findAll());
+		view.addObject("propertyCategories", propertyCategoryService.findAll());
 		
 		return view;
 	}
@@ -34,7 +34,7 @@ public class PropertyCategoryController {
 		return "redirect:/propertycategory";
 	}
 	
-	@PostMapping("{id}/delete")
+	@GetMapping("{id}/delete")
 	public String propertyCategoryDelete(@PathVariable("id") Long id) {
 		
 		propertyCategoryService.delete(id);
