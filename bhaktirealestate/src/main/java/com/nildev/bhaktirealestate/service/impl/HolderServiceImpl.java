@@ -25,7 +25,7 @@ public class HolderServiceImpl implements HolderService {
 	@Override
 	@Transactional(readOnly = true)
 	public List<Holder> findByPropertyCategoryId(Long propertyCategoryId) {
-		return holderRepository.findByPropertyCategory_IDAndStatus(propertyCategoryId, 0);
+		return holderRepository.findByPropertyCategory_IdAndStatusOrderByIdDesc(propertyCategoryId, 0);
 	}
 
 	@Override
@@ -34,6 +34,7 @@ public class HolderServiceImpl implements HolderService {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public Holder findById(Long id) {
 		return holderRepository.findById(id).get();
 	}

@@ -58,8 +58,12 @@ public class Holder implements Serializable {
     private String propertySize;
     
     @Size(max = 100)
-    @Column(name = "property_price", length = 300)
+    @Column(name = "property_price", length = 100)
     private String propertyPrice;
+    
+    @Size(max = 300)
+    @Column(name = "note", length = 300)
+    private String note;
     
     @JsonIgnore
     @NotNull
@@ -164,6 +168,14 @@ public class Holder implements Serializable {
 
 	public void setStatus(int status) {
 		this.status = status;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
 	} 
     
 }

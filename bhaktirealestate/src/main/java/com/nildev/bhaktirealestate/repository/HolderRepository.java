@@ -12,7 +12,7 @@ import com.nildev.bhaktirealestate.domain.Holder;
 @Repository
 public interface HolderRepository extends JpaRepository<Holder, Long> {
 
-	List<Holder> findByPropertyCategory_IDAndStatus(Long id, int status);
+	List<Holder> findByPropertyCategory_IdAndStatusOrderByIdDesc(Long id, int status);
 	
 	@Modifying
 	@Query("UPDATE Holder SET status = 1 WHERE id = ?1")

@@ -27,24 +27,21 @@ $(document).ready(function(){
 		}
 	});
 	
-	$('#property_category_edit_modal').on('show.bs.modal', function() {
-		$("#updatepropertycategory").attr("disabled",false);
-		$('#propertycategory_edit_form').formValidation('resetForm', true);
+	$("#editpropertycategory").click(function() {
+		$('#propertycategory_edit_form').data('formValidation').validate();
 	});
 	
-	$("#editpropertycategory").click(function() {
-		$('#department_edit_form').data('formValidation').validate();
+	$('#property_category_edit_modal').on('shown.bs.modal', function() {
+		$("#updatePropertyCategoryName").focus();
 	});
+	
 });
 
-function editPropertyCategory(row, id) {
+function editPropertyCategory(id) {
 	
-	$('#propertycategory_edit_form').formValidation('resetForm', true);
+	$('#propertycategory_edit_form').formValidation('resetForm', true);	
 
-	var crow=$(row).closest('tr');		
-	var name=$(crow).find('td:eq(1)').text();
-
-	$('#updatePropertyCategoryName').val(name);
+	$('#updatePropertyCategoryName').val($("#propertyCategoryName" + id).val());
 	$('#propertyCategoryId').val(id);
 
 	$('#property_category_edit_modal').modal('show');

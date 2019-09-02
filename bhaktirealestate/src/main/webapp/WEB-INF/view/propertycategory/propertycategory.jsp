@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -22,7 +22,11 @@
 				}
 			});
 		</script>
-
+		<style type="text/css">
+			.font-size-1_2rem {
+			    font-size: 1.2rem !important;
+			  }
+		</style>
 		<!--end::Fonts -->
 
 		<!--begin::Page Vendors Styles(used by this page) -->
@@ -60,21 +64,8 @@
 		<link href="<%=request.getContextPath()%>/assets/css/demo1/skins/aside/dark.css" rel="stylesheet" type="text/css" />
 		
 		<link href="<%=request.getContextPath()%>/assets/vendors/formvalidation/formValidation.min.css" rel="stylesheet" type="text/css" />
-		
 		<!--end::Layout Skins -->
 		<link rel="shortcut icon" href="<%=request.getContextPath()%>/assets/media/logos/favicon.ico" />
-		<style type="text/css">
-			.kt-widget__status {
-				font-weight: 500;
-				-webkit-box-flex: 1;
-				-ms-flex-positive: 1;
-				flex-grow: 1;
-				text-align: right;
-			}
-			.holder-item {
-				cursor: pointer;
-			}
-		</style>
 	</head>
 
 	<!-- end::Head -->
@@ -119,7 +110,7 @@
 
 						<!-- begin:: Header Topbar -->
 						<div class="kt-header__topbar">
-						
+							
 							<!--begin: User Bar -->
 							<div class="kt-header__topbar-item kt-header__topbar-item--user">
 								<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
@@ -145,9 +136,9 @@
 										<div class="kt-user-card__name">
 											Admin
 										</div>
-										<div class="kt-user-card__badge">
-											<!-- <span class="btn btn-success btn-sm btn-bold btn-font-md">23 messages</span> -->
-										</div>
+										<!-- <div class="kt-user-card__badge">
+											<span class="btn btn-success btn-sm btn-bold btn-font-md">23 messages</span>
+										</div> -->
 									</div>
 
 									<!--end: Head -->
@@ -179,108 +170,43 @@
 							
 							<!--Begin::Section-->
 							<div class="row justify-content-center">
-								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
+								<div class="col-lg-6 col-md-12 col-sm-12" >
 
 									<!--begin:: Widgets/Notifications-->
 									<div class="kt-portlet kt-portlet--height-fluid">
 										<div class="kt-portlet__head">
 											<div class="kt-portlet__head-label">
 												<h3 class="kt-portlet__head-title">
-													<a class="btn btn-clean btn-bold btn-upper" href="<%=request.getContextPath()%>/propertycategory">
-														<span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-																<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-																	<polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
-																	<path d="M5.29288961,6.70710318 C4.90236532,6.31657888 4.90236532,5.68341391 5.29288961,5.29288961 C5.68341391,4.90236532 6.31657888,4.90236532 6.70710318,5.29288961 L12.7071032,11.2928896 C13.0856821,11.6714686 13.0989277,12.281055 12.7371505,12.675721 L7.23715054,18.675721 C6.86395813,19.08284 6.23139076,19.1103429 5.82427177,18.7371505 C5.41715278,18.3639581 5.38964985,17.7313908 5.76284226,17.3242718 L10.6158586,12.0300721 L5.29288961,6.70710318 Z" id="Path-94" fill="#000000" fill-rule="nonzero" transform="translate(8.999997, 11.999999) scale(-1, 1) translate(-8.999997, -11.999999) "></path>
-																	<path d="M10.7071009,15.7071068 C10.3165766,16.0976311 9.68341162,16.0976311 9.29288733,15.7071068 C8.90236304,15.3165825 8.90236304,14.6834175 9.29288733,14.2928932 L15.2928873,8.29289322 C15.6714663,7.91431428 16.2810527,7.90106866 16.6757187,8.26284586 L22.6757187,13.7628459 C23.0828377,14.1360383 23.1103407,14.7686056 22.7371482,15.1757246 C22.3639558,15.5828436 21.7313885,15.6103465 21.3242695,15.2371541 L16.0300699,10.3841378 L10.7071009,15.7071068 Z" id="Path-94" fill="#000000" fill-rule="nonzero" opacity="0.3" transform="translate(15.999997, 11.999999) scale(-1, 1) rotate(-270.000000) translate(-15.999997, -11.999999) "></path>
-																</g>
-															</svg></span>
-													</a>
-													<span>${propertyCategory.propertyCategoryName}</span>
+													Property Category
 												</h3>
 											</div>
 											<div class="kt-portlet__head-toolbar">
-												<a href="#" class="btn btn-primary btn-icon" data-toggle="modal" data-target="#holder_new_modal">
+												
+												<a href="#" class="btn btn-primary btn-icon" data-toggle="modal" data-target="#property_category_new_modal">
 													<i class="flaticon2-plus"></i>
 												</a>
 											</div>
 										</div>
 										<div class="kt-portlet__body">
-											<form class="kt-margin-b-20" id="kt_subheader_search_form">
-												<div class="kt-input-icon kt-input-icon--left">
-													<input type="text" class="form-control" placeholder="Search..." id="searchBox">
-													<span class="kt-input-icon__icon kt-input-icon__icon--left">
-														<span><i class="la la-search"></i></span>
-													</span>
-												</div>
-											</form>
 											
 											<div class="tab-content">
-												<!-- <div class="alert alert-secondary " role="alert">
-													<div class="alert-text">No Records found</div>
-												</div> -->
-												<div class="row " id="holder-container">
-													<c:forEach items="${holders}" var="holder" varStatus="status">
-														<div class="col-xl-12 holder-item" data-id="${holder.id}">
-															<input type="hidden" id="holderName${holder.id}" value="${holder.holderName}"/>
-															<input type="hidden" id="addressLine1${holder.id}" value="${holder.addressLine1}"/>
-															<input type="hidden" id="addressLine2${holder.id}" value="${holder.addressLine2}"/>
-															<input type="hidden" id="mobileNo${holder.id}" value="${holder.mobileNo}"/>
-															<input type="hidden" id="propertySize${holder.id}" value="${holder.propertySize}"/>
-															<input type="hidden" id="propertyPrice${holder.id}" value="${holder.propertyPrice}"/>
-															<input type="hidden" id="note${holder.id}" value="${holder.note}"/>
-															<!--Begin::Portlet-->
-															<div class="kt-portlet kt-portlet--height-fluid">
-																<div class="kt-portlet__body kt-padding-10">
-																	<!--begin::Widget -->
-																	<div class="kt-widget kt-widget--user-profile-2 kt-margin-t-50">
-																		<div class="kt-widget__head">
-																			<div class="kt-widget__info kt-padding-l-0">
-																				<span class="kt-widget__username">
-																					${holder.holderName}
-																				</span>
-																				<span class="kt-widget__desc" data-address-line1="">
-																					${holder.addressLine1}
-																				</span>
-																				<span class="kt-widget__desc" data-address-line2="">
-																					${holder.addressLine2}
-																				</span>
-																			</div>
-																		</div>
-																		<div class="kt-widget__body">
-																			<div class="kt-widget__item">
-																				<div class="kt-widget__contact" style="display: block;">
-																					<span class="kt-widget__label">Mobile No.:</span>
-																					<a href="tel:${holder.mobileNo}" onclick="event.stopPropagation()" class="kt-widget__data">${holder.mobileNo}</a>
-																				</div>
-																				<div class="kt-widget__contact" style="display: block;">
-																					<span class="kt-widget__label">Size:</span>
-																					<a href="#" class="kt-widget__data">${holder.propertySize}</a>
-																				</div>
-																				<div class="kt-widget__contact" style="display: block;">
-																					<span class="kt-widget__label">Price:</span>
-																					<span class="kt-widget__data">${holder.propertyPrice}</span>
-																				</div>
-																				<c:if test="${not empty holder.note}">
-																					<div class="kt-widget__contact" style="display: block;">
-																						<span class="kt-widget__label">Note:</span>
-																						<span class="kt-widget__data">${holder.note}</span>
-																					</div>
-																				</c:if>
-																			</div>
-																		</div>
-																	</div>
-																	
-																	<!--end::Widget -->
-																</div>
+												<!-- <a href="tel:9714866160">Call Me</a> -->
+												<div class="tab-pane active" id="kt_widget6_tab1_content" aria-expanded="true">
+													<div class="kt-widget4">
+														<c:forEach items="${propertyCategories}" var="propertyCategory" varStatus="status">
+															<div class="kt-widget4__item">
+																<div class="kt-widget4__info">
+																	<a href="<%=request.getContextPath()%>/holder?categoryId=${propertyCategory.id}" class="kt-widget4__username font-size-1_2rem">
+																		${propertyCategory.propertyCategoryName}
+																	</a>
+																</div>						 
+																<button type="button" class="btn btn-secondary btn-icon" onclick="editPropertyCategory(${propertyCategory.id})"><i class="fa fa-eye"></i></button>
+																<input type="hidden" id="propertyCategoryName${propertyCategory.id}" value="${propertyCategory.propertyCategoryName}"/>					 
 															</div>
-						
-															<!--End::Portlet-->
-														</div>
-													</c:forEach>
+														</c:forEach>
+													</div>
 												</div>
-												
 											</div>
-											
 										</div>
 									</div>
 
@@ -321,104 +247,49 @@
 
 		<!-- end::Scrolltop -->
 		<!--begin::Modal-->
-		<div class="modal fade" id="holder_new_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
+		<div class="modal fade" id="property_category_new_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">New Holder</h5>
+						<h5 class="modal-title" id="exampleModalLabel">New Property Category</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						</button>
 					</div>
-					<form method="post" action="<%=request.getContextPath()%>/holder/save" id="holder_new_form">
-						<input type="hidden" name="propertyCategory.id" value="${propertyCategory.id}"/>
+					<form id="propertycategory_new_form" action="<%=request.getContextPath()%>/propertycategory/save" method="post">
 						<div class="modal-body">
 							<div class="form-group">
-								<label for="recipient-name" class="form-control-label">Holder Name:</label>
-								<input type="text" class="form-control" id="holderName" name="holderName">
-							</div>
-							<div class="form-group">
-								<label for="recipient-name" class="form-control-label">Address Line 1:</label>
-								<input type="text" class="form-control" id="addressLine1" name="addressLine1">
-							</div>
-							<div class="form-group">
-								<label for="recipient-name" class="form-control-label">Address Line 2:</label>
-								<input type="text" class="form-control" id="addressLine2" name="addressLine2">
-							</div>
-							<div class="form-group">
-								<label for="recipient-name" class="form-control-label">Mobile No.:</label>
-								<input type="text" class="form-control" id="mobileNo" name="mobileNo">
-							</div>
-							<div class="form-group row">
-								<div class="col-lg-6">
-									<label for="recipient-name" class="form-control-label">Property Size:</label>
-									<input type="text" class="form-control" id="propertySize" name="propertySize">
-								</div>
-								<div class="col-lg-6">
-									<label for="recipient-name" class="form-control-label">Property Price:</label>
-								<input type="text" class="form-control" id="propertyPrice" name="propertyPrice">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="recipient-name" class="form-control-label">Note:</label>
-								<textarea class="form-control" id="note" name="note"></textarea>
+								<label for="recipient-name" class="form-control-label">Property Category:</label>
+								<input type="text" class="form-control" id="propertyCategoryName" name="propertyCategoryName">
 							</div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary" id="saveholder">Save</button>
+							<button type="submit" class="btn btn-primary" id="savepropertycategory">Save</button>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
-
 		<!--end::Modal-->
 		<!--begin::Modal-->
-		<div class="modal fade" id="holder_edit_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
+		<div class="modal fade" id="property_category_edit_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Edit Holder</h5>
-						<button type="button" class="btn btn-danger btn-sm btn-icon" id="delete_holder"><i class="fa fa-trash"></i></button>
+						<h5 class="modal-title" id="exampleModalLabel">Edit Property Category</h5>
+						<button type="button" class="btn btn-danger btn-sm btn-icon" id="delete_property_category"><i class="fa fa-trash"></i></button>
 					</div>
-					<form method="post" action="<%=request.getContextPath()%>/holder/save" id="holder_edit_form">
-						<input type="hidden" name="id" id="holderId" value=""/>
-						<input type="hidden" name="propertyCategory.id" value="${propertyCategory.id}"/>
+					<form id="propertycategory_edit_form" action="<%=request.getContextPath()%>/propertycategory/save" method="post">
+						<input type="hidden" name="id" id="propertyCategoryId"/>
 						<div class="modal-body">
 							<div class="form-group">
-								<label for="recipient-name" class="form-control-label">Holder Name:</label>
-								<input type="text" class="form-control" id="updateHolderName" name="holderName">
-							</div>
-							<div class="form-group">
-								<label for="recipient-name" class="form-control-label">Address Line 1:</label>
-								<input type="text" class="form-control" id="updateAddressLine1" name="addressLine1">
-							</div>
-							<div class="form-group">
-								<label for="recipient-name" class="form-control-label">Address Line 2:</label>
-								<input type="text" class="form-control" id="updateAddressLine2" name="addressLine2">
-							</div>
-							<div class="form-group">
-								<label for="recipient-name" class="form-control-label">Mobile No.:</label>
-								<input type="text" class="form-control" id="updateMobileNo" name="mobileNo">
-							</div>
-							<div class="form-group row">
-								<div class="col-lg-6">
-									<label for="recipient-name" class="form-control-label">Property Size:</label>
-									<input type="text" class="form-control" id="updatePropertySize" name="propertySize">
-								</div>
-								<div class="col-lg-6">
-									<label for="recipient-name" class="form-control-label">Property Price:</label>
-								<input type="text" class="form-control" id="updatePropertyPrice" name="propertyPrice">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="recipient-name" class="form-control-label">Note:</label>
-								<textarea class="form-control" id="updateNote" name="note"></textarea>
+								<label for="recipient-name" class="form-control-label">Property Category:</label>
+								<input type="text" class="form-control" id="updatePropertyCategoryName" name="propertyCategoryName">
 							</div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary" id="updateholder">Save</button>
+							<button type="submit" class="btn btn-primary" id="editpropertycategory">Save</button>
 						</div>
 					</form>
 				</div>
@@ -479,13 +350,30 @@
 		<!--begin::Page Vendors(used by this page) -->
 		<script src="<%=request.getContextPath()%>/assets/vendors/formvalidation/formValidation.min.js"></script>
 		<script src="<%=request.getContextPath()%>/assets/vendors/formvalidation/framework/bootstrap.min.js"></script>
+		
+	
 		<!--end::Page Vendors -->
 
 		<!--begin::Page Scripts(used by this page) -->
-		<script src="<%=request.getContextPath()%>/script/holder-new-script.js" type="text/javascript"></script>
-		<script src="<%=request.getContextPath()%>/script/holder-edit-script.js" type="text/javascript"></script>
+		<script src="<%=request.getContextPath()%>/script/propertycategory-new-script.js" type="text/javascript"></script>
+		<script src="<%=request.getContextPath()%>/script/propertycategory-edit-script.js" type="text/javascript"></script>
 		<!--end::Page Scripts -->
 		
+		<script type="text/javascript">
+		$('#delete_property_category').click(function(e) {
+            swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!'
+            }).then(function(result) {
+                if (result.value) {
+                    window.location.href = "/propertycategory/" + $("#propertyCategoryId").val() + "/delete"
+                }
+            });
+        });
+		</script>
 	</body>
 
 	<!-- end::Body -->

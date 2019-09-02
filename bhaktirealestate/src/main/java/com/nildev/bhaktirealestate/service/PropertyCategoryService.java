@@ -11,4 +11,6 @@ public interface PropertyCategoryService {
 	List<PropertyCategory> findAll();
 	
 	void delete(Long propertyCategoryId);
+
+	PropertyCategory findById(Long propertyCategoryId);
 }

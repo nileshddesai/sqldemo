@@ -33,4 +33,10 @@ public class PropertyCategoryServiceImpl implements PropertyCategoryService {
 		propertyCategoryRepository.delete(propertyCategoryId);
 	}
 
+	@Override
+	@Transactional(readOnly = true)
+	public PropertyCategory findById(Long id) {
+		return propertyCategoryRepository.findById(id).get();
+	}
+
 }

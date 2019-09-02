@@ -31,10 +31,10 @@ $(document).ready(function(){
 		$("#savepropertycategory").attr("disabled",false);
 		$('#propertycategory_new_form').formValidation('resetForm', true);
 	});
-	
-	$("#savepropertycategory").click(function() {
-		$('#department_new_form').data('formValidation').validate();
+	$('#property_category_new_modal').on('shown.bs.modal', function() {
+		$("#propertyCategoryName").focus();
 	});
-	
-	
+	$("#savepropertycategory").click(function() {
+		$('#propertycategory_new_form').data('formValidation').validate();
+	});
 });
